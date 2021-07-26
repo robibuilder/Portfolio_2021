@@ -1,0 +1,156 @@
+
+body {
+    position: relative;
+    background-attachment: fixed;
+    background-color: black;
+}
+
+.jumbotron{
+    height: 100vh;
+}
+
+/* ----- WINDOW SIZING TESTS ----- */
+
+.small_window{
+    background-color: green;
+
+}
+
+.medium_window{
+    height: 50vh;
+    background-color: black;
+}
+
+/* ----- FORMATTING ----- */
+
+.m_margin{
+    margin-top: 10vh;
+}
+
+.c_height{
+    height: 50vh;
+}
+
+.large_window{
+        background-color: red;
+
+}
+.spacing1 {
+	background-color: black;
+    background-size: 20% 100%;
+}	
+
+.i{
+    padding-right: 5px;
+    color: #;
+}
+
+.padding-top35{
+    padding-top: 34vh;
+    padding-bottom: 34vh;
+}
+
+.topBody{
+    padding-top: 250px;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+.midBody{
+    padding: 250px;
+}
+
+.experience_padding{
+    padding-bottom: 30px;
+}
+
+.border-custom{
+    border-color: # !important;
+    /* color: #4dd2ff s!important; */
+    border-width: 5px !important;
+}
+
+.footer {
+  /* position: absolute; */ /* THIS LINE MESSES WITH THE FOOTER */
+  bottom: 0;
+  /* Set the fixed height/width of the footer here */
+  width: 100%;
+  background-color: black;
+}
+
+/* ----- FONTS ----- */
+
+h1 {
+    font-size: 100px;
+    color: #007bff !important
+}
+
+h2 {
+    font-size: 72px;
+    color: white;
+}
+
+h3 {
+    font-size: 18px;
+    color: #007bff !important
+}
+
+h4{
+    font-size: 18px;
+    color: white;
+}
+
+p-1 {
+    color: white;
+
+}
+
+.console{
+    font-size: 14px;
+     font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+}
+
+.App{
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.text1 {
+    color: white;
+}
+
+/* ----- FOOTER ----- */
+
+.footer{
+    padding: 20px;
+    background-color: black;
+    color: white
+}
+
+/* ----- OTHER ----- */
+
+.max-height{
+    height: 100vh;
+}
+
+.padding_bottom{
+    padding-bottom: 30px;
+}
+
+/* ----- WIPS ----- */
+
+.height_38{
+    height: 38vh;
+}
+
+.height_30{
+    height: 35vh;
+}
+
+/* MIDDLE */
+.middle {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+}
