@@ -1,8 +1,7 @@
 # Portfolio_2021
 
-# Hi All!
-
-## I wanted to include some documentation and context with some of my provided examples.  If you have any addiotnal questions please feel free to ask. 
+Hi All!
+I wanted to include some documentation and context with some of my provided examples.  If you have any addiotnal questions please feel free to ask. 
 
 ## Swift:
 
