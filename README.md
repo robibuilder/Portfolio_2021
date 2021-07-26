@@ -16,5 +16,5 @@ Simple game thats calculates the users score based on how many times the user cl
 Personal Website:
 A never ending project - Web based resume built with Bootstrap.
 
-JacobRobinett.oucreate.com:
+JacobRobinett.oucreate.com
 Photography portfolio created for a co-worker, this site was created as a part of an OU web design copmetition.  Top menu auto scrolls to different sections of the site. (site hosted on OU servers, can be a bit slow to load initially)
