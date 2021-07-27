@@ -7,9 +7,21 @@
 
 import SwiftUI
 
+struct UserPoints: Hashable {
+    static func == (lhs: UserPoints, rhs: UserPoints) -> Bool {
+        lhs.points == rhs.points
+    }
+    
+    var points: Int = 0
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(points)
+    }
+}
+
 struct ContentView: View {
     @State private var showDetails = false
-    @State private var userPoints = 0
+    @State private var userPoints = UserPoints(points: 2)
     @State private var sliderVal = 5.0
     @State private var level = UIColor.systemBlue
     
@@ -22,7 +34,7 @@ struct ContentView: View {
             VStack {
                 // smaller vstack w/ spacer at the bottom
                 VStack {
-                    Text("\(userPoints)")
+                    Text("\(Double(abs(userPoints.hashValue) % 100) / 100.0)")
                         .font(.largeTitle)
                         .foregroundColor(.white)
                         .padding()
@@ -30,7 +42,7 @@ struct ContentView: View {
                     Button("Click Me!"){
                         var mult = 1.0
                         mult = mult * sliderVal
-                        userPoints = userPoints + Int(mult)
+                        userPoints.points = userPoints.points + Int(mult)
                         updateLevel()
                         //print(userPoints)     // testing only
                     }
@@ -39,7 +51,7 @@ struct ContentView: View {
                     HStack {
                         Slider(
                             value: $sliderVal,      // current position of slider
-                            in: 0...10,         // range
+                            in: 0...Double(userPoints.points),         // range
                             step: 1         // range step
                         ){
                             
@@ -57,29 +69,12 @@ struct ContentView: View {
         }
     }
     
-    func updateLevel(){
-        if(userPoints > 100){
+    func updateLevel() {
+        
+        if(userPoints.points > 100){
+            
+            UIColor(hue: 0.5, saturation: 0.5, brightness: 0.6, alpha: 1.0)
             level = UIColor.systemPink
-        }
-        
-        if(userPoints > 200){
-            level = UIColor.systemGreen
-        }
-        
-        if(userPoints > 300){
-            level = UIColor.systemOrange
-        }
-        
-        if(userPoints > 400){
-            level = UIColor.systemYellow
-        }
-        
-        if(userPoints > 500){
-            level = UIColor.systemRed
-        }
-        
-        if(userPoints > 600){
-            level = UIColor.systemGray
         }
     }
 }
