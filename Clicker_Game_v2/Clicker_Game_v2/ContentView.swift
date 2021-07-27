@@ -24,6 +24,7 @@ struct ContentView: View {
     @State private var userPoints = UserPoints(points: 2)
     @State private var sliderVal = 5.0
     @State private var level = UIColor.systemBlue
+    @State private var lastScore = 1
     
     var body: some View {
         // full screen stack
@@ -34,7 +35,7 @@ struct ContentView: View {
             VStack {
                 // smaller vstack w/ spacer at the bottom
                 VStack {
-                    Text("\(Double(abs(userPoints.hashValue) % 100) / 100.0)")
+                    Text("\(userPoints.points)")
                         .font(.largeTitle)
                         .foregroundColor(.white)
                         .padding()
@@ -70,12 +71,12 @@ struct ContentView: View {
     }
     
     func updateLevel() {
-        
-        if(userPoints.points > 100){
-            
-            UIColor(hue: 0.5, saturation: 0.5, brightness: 0.6, alpha: 1.0)
-            level = UIColor.systemPink
+        if userPoints.points - lastScore > 100 {
+            let newColor = UIColor(hue: CGFloat(Double(abs(userPoints.hashValue) % 100) / 100.0), saturation: 0.5, brightness: 0.6, alpha: 1.0)
+            level = newColor
+            lastScore = userPoints.points
         }
+        
     }
 }
 
