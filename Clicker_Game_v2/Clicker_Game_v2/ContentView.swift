@@ -15,7 +15,7 @@ struct UserPoints: Hashable {
     var points: Int = 0
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(points)
+        hasher.combine(floor(Double(points) / 100.0))
     }
 }
 
